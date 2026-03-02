@@ -1,0 +1,40 @@
+from collections import Counter
+t = int(input())
+for _ in range(t):
+    n, l, r = map(int, input().split())
+    socks = list(map(int, input().split()))
+    left = Counter(socks[:l])
+    right = Counter(socks[l:])
+
+    for i in list(left.keys()):
+        match = min(left[i], right[i])
+        left[i] -= match
+        right[i] -= match
+        l -= match
+        r -= match
+        if right[i] == 0:
+            del right[i]
+
+    cost = 0
+
+    if l > r:
+        extra = l - r
+        for i in list(left.keys()):
+            pairs = left[i] // 2
+            use = min(pairs, extra // 2)
+            cost += use
+            left[i] -= use * 2
+            extra -= use * 2
+        cost += extra // 2  
+    elif r > l:
+        extra = r - l
+        for i in list(right.keys()):
+            pairs = right[i] // 2
+            min_v = min(pairs, extra // 2)
+            cost += min_v
+            right[i] -= min_v * 2
+            extra -= min_v * 2
+        cost += extra // 2  
+    rem = sum(left.values()) + sum(right.values())
+    cost += rem // 2
+    print(cost)
