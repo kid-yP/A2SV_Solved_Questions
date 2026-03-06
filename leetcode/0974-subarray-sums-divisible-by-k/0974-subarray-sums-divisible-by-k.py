@@ -9,8 +9,8 @@ class Solution:
 
             remainder = p_sum % k
 
-            # if remainder < 0:
-            #     remainder += k
+            if remainder < 0:
+                remainder += k
             
             if remainder in remainder_cnt:
                 result += remainder_cnt[remainder]
