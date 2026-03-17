@@ -1,6 +1,9 @@
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
-        winner = 0
-        for i in range(1, n + 1):
-            winner = (winner + k) % i
-        return winner + 1
+        def winnerIndex(n: int, k: int) -> int:
+            if n == 0:
+                return 0
+            
+            return (winnerIndex(n - 1, k) + k) % n
+
+        return winnerIndex(n, k) + 1
