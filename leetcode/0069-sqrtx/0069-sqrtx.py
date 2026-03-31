@@ -6,8 +6,7 @@ class Solution:
         while left <= right:
             mid = (left + right) // 2
             if mid * mid <= x:
-                sqrt = mid
                 left = mid + 1
             else:
                 right = mid - 1
-        return sqrt
+        return right
