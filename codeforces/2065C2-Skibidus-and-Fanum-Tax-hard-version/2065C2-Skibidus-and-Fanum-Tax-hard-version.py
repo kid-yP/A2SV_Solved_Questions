@@ -1,6 +1,7 @@
 import bisect
 
 t = int(input())
+
 for _ in range(t):
     n, m = map(int, input().split())
     a = list(map(int, input().split()))
@@ -9,31 +10,26 @@ for _ in range(t):
     b.sort()
     
     prev = -10**18
+    ok = True
     
-    possible = True
-    
-    for i in range(n):
-        keep = a[i]
-        
-        target = prev + a[i]
-        idx = bisect.bisect_left(b, target)
-        
-        change = float('inf')
-        if idx < m:
-            change = b[idx] - a[i]
-        
+    for x in a:
         best = float('inf')
         
-        if keep >= prev:
-            best = min(best, keep)
+        if x >= prev:
+            best = x
         
-        if change >= prev:
-            best = min(best, change)
+        target = prev + x
+        idx = bisect.bisect_left(b, target)
+        
+        if idx < m:
+            val = b[idx] - x
+            if val >= prev:
+                best = min(best, val)
         
         if best == float('inf'):
-            possible = False
+            ok = False
             break
         
         prev = best
     
-    print("YES" if possible else "NO")
+    print("YES" if ok else "NO")
