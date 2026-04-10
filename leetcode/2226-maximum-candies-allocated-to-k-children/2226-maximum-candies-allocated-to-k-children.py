@@ -9,9 +9,8 @@ class Solution:
             children = sum(pile // mid for pile in candies)
 
             if children >= k:
-                ans = mid
                 left = mid + 1
             else:
                 right = mid - 1
-    
-        return ans
+        
+        return right
