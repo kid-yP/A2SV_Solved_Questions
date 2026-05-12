@@ -7,3 +7,4 @@ class Solution:
         
         result = [heapq.heappop(heap)[1] for _ in range(k)]
         return result
+        
