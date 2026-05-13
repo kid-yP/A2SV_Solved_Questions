@@ -29,3 +29,4 @@ class Solution:
             adj_list[edge[1] - 1].append(edge[0] - 1)
 
         return []
+        
