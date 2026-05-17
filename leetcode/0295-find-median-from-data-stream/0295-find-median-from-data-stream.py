@@ -1,16 +1,13 @@
 class MedianFinder:        
     def __init__(self):
-        self.low = []   # max-heap (store negatives)
-        self.high = []  # min-heap
+        self.low = []
+        self.high = []
 
     def addNum(self, num: int) -> None:
-        # Step 1: push into max-heap
         heapq.heappush(self.low, -num)
         
-        # Step 2: balance by moving largest from low to high
         heapq.heappush(self.high, -heapq.heappop(self.low))
         
-        # Step 3: ensure low has equal or more elements
         if len(self.high) > len(self.low):
             heapq.heappush(self.low, -heapq.heappop(self.high))
 
