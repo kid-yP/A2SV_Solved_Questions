@@ -9,9 +9,7 @@ HackerRank/
 LeetCode/
 
 Codeforces/
-
 Each folder contains problem statements (where possible) and my solutions in Python/C++/Java (depending on the problem).
-
 Code is written with clarity and efficiency in mind, following best practices.
 
 🚀 Purpose
