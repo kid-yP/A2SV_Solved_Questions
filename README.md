@@ -5,7 +5,7 @@ This repository contains my solutions to algorithmic and data structure problems
 Solutions organized by platform:
 
 HackerRank/
-
+    
 LeetCode/
 
 Codeforces/
