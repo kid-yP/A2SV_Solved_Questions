@@ -1,5 +1,5 @@
 # 583. Delete-Operation-for-Two-Strings
-
+ 
 **Difficulty:** Medium
 
 **Problem:** [Delete-Operation-for-Two-Strings](https://leetcode.com/problems/delete-operation-for-two-strings)
