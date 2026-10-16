@@ -1,4 +1,5 @@
 ## A2SV Solved Questions
+
 This repository contains my solutions to algorithmic and data structure problems from HackerRank, LeetCode, and Codeforces. It serves as both a personal archive and a resource for anyone looking to study problem-solving approaches.
 
 📚 Contents
@@ -18,3 +19,4 @@ Track my progress in competitive programming.
 Share solutions with peers and learners.
 
 Provide references for common problem-solving patterns.
+
